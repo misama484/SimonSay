@@ -41,7 +41,9 @@ const Simon = () => {
 
       //iluminar boton
       setTimeout(() => {
-        
+        ref.current.setNativeProps({
+          opacity: 0
+        })
       
       }, 250)
 
@@ -85,6 +87,11 @@ const Simon = () => {
           ></TouchableOpacity>
         </View>
 
+        <TouchableOpacity
+          title="Jugar"
+          style={styles.playButton}
+          ><Text style={styles.playText}>Play</Text></TouchableOpacity>
+
       </View>
     </View>
   )
@@ -110,17 +117,17 @@ const styles = StyleSheet.create({
     height:170,
     margin: 10,
     borderWidth: 2,
-    borderColor: 'red',
+    borderColor: 'black',
     borderTopLeftRadius: 500,
     backgroundColor: 'red',    
-    opacity: 0,
+    opacity: 1,
   },
   botonBlue:{
     width: 170,
     height:170,
     margin: 10,
     borderWidth: 2,
-    borderColor: 'blue',
+    borderColor: 'black',
     borderBottomLeftRadius: 500,
     backgroundColor: 'blue',    
   },
@@ -129,7 +136,7 @@ const styles = StyleSheet.create({
     height:170,
     margin: 10,
     borderWidth: 2,
-    borderColor: 'green',
+    borderColor: 'black',
     borderTopRightRadius: 500,
     backgroundColor: 'green',    
   },
@@ -138,10 +145,28 @@ const styles = StyleSheet.create({
     height:170,
     margin: 10,
     borderWidth: 2,
-    borderColor: 'yellow',
+    borderColor: 'black',
     borderBottomRightRadius: 500,
     backgroundColor: 'yellow',    
   },
+  playButton:{
+    position: "absolute",
+    width: 100,
+    height:100,
+    margin: 10,
+    borderWidth: 2,
+    borderColor: 'black',
+    backgroundColor: '#8eb0bc',    
+    borderRadius: 500,
+    opacity: 1,
+  },
+  playText:{
+    fontSize: 30,
+    paddingVertical: 25,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    color: 'black',
+  }
 
 })
 export default Simon
